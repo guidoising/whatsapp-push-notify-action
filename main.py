@@ -7,7 +7,7 @@ auth_token = os.environ['auth_token']
 client = Client(account_sid, auth_token)
 
 message = client.messages.create(
-                              body='Push event triggered in master branch\n'+os.environ['commit_msg'],
+                              body='Push event triggered in master branch\n'+os.environ['repository_name']+'\n'+os.environ['commit_msg'],
                               from_='whatsapp:+14155238886',
                               to='whatsapp:'+os.environ['to_whatsapp_no']
                           )
